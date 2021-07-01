@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import React from "react";
 import { db, auth } from "../firebase";
 import firebase from "firebase";
@@ -22,12 +22,12 @@ const Profile = ({ cleaner, navigation }) => {
 		db.collection("clients").doc(auth.currentUser.uid).update({
 			hasCleaner: true,
 			currentCleaner: cleaner.companyName,
-			dateOfPayment: new Date(),
+			dateOfPayment: new Date()
 		});
 		db.collection("cleaners")
 			.doc(cleaner.id)
 			.update({
-				numberOfJobs: firebase.firestore.FieldValue.increment(1),
+				numberOfJobs: firebase.firestore.FieldValue.increment(1)
 			});
 		console.log("this has run");
 	};
@@ -39,7 +39,7 @@ const Profile = ({ cleaner, navigation }) => {
 				source={{
 					uri:
 						cleaner.cleanerPhotoURL ||
-						"http://clipart-library.com/new_gallery/44-448154_cleaning-clipart-worker-window-cleaning-clip-art.png ",
+						"http://clipart-library.com/new_gallery/44-448154_cleaning-clipart-worker-window-cleaning-clip-art.png "
 				}}
 				style={{ margin: 25, alignSelf: "center" }}
 			/>

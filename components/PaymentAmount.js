@@ -11,7 +11,7 @@ const PaymentAmount = ({ navigation, setAmount, cleaner }) => {
 		db.collection("cleaners")
 			.doc(cleaner.id)
 			.update({
-				balance: firebase.firestore.FieldValue.increment(number),
+				balance: firebase.firestore.FieldValue.increment(number)
 			});
 	};
 
@@ -92,9 +92,8 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		flex: 1,
 		padding: 20,
-		marginTop: 50,
-		// backgroundColor: "#ffffff"
-	},
+		marginTop: 50
+	}
 });
 
 export default PaymentAmount;

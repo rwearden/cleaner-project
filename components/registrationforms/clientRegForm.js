@@ -69,15 +69,14 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		flex: 1,
 		padding: 20,
-		marginTop: 50,
-		// backgroundColor: "#ffffff"
+		marginTop: 50
 	},
 	button: {
 		marginLeft: 10,
 		marginRight: 10,
-		marginTop: 15,
+		marginTop: 15
 	},
 	textInput: {
-		marginBottom: 5,
-	},
+		marginBottom: 5
+	}
 });

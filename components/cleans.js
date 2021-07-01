@@ -1,9 +1,7 @@
 import { db, auth } from "../firebase";
-import firebase from "firebase";
-import { Card } from "react-native-elements";
 import React from "react";
-import { View, Pressable, ScrollView, ActivityIndicator } from "react-native";
-import { Button, Title, Text, Avatar } from "react-native-paper";
+import { View, ActivityIndicator } from "react-native";
+import { Title, Text, Avatar } from "react-native-paper";
 import { useState, useEffect } from "react";
 import StarRating from "react-native-star-rating";
 
@@ -37,13 +35,13 @@ const Cleans = () => {
 					justifyContent: "center",
 					flex: 1,
 					padding: 20,
-					marginTop: 50,
+					marginTop: 50
 				}}
 			>
 				<Avatar.Image
 					size={150}
 					source={{
-						uri: cleanerDetails.cleanerPhotoURL,
+						uri: cleanerDetails.cleanerPhotoURL
 					}}
 					style={{ margin: 25, alignSelf: "center" }}
 				/>

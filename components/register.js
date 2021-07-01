@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { ClientSignupForm } from "./registrationforms/clientRegForm";
 import { CleanerSignupForm } from "./registrationforms/cleanersRegForm";
-import firebase from "firebase";
-import { useEffect } from "react";
 import { db, auth } from "../firebase";
 import axios from "axios";
-import { Text, StyleSheet, View, ActivityIndicator } from "react-native";
+import { ActivityIndicator } from "react-native";
 import { googleMapsAPI } from "../googleMapsAPI";
-import { postcodeFormatter } from "../utils/utils";
-// import { db } from "../App";
 
 const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 	const [clientRegisterDetails, setClientRegisterDetails] = useState({
@@ -20,10 +16,10 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 		weightedHeatMapPoints: {
 			latitude: 1,
 			longitude: 1,
-			weight: 1,
+			weight: 1
 		},
 		photoURL:
-			"https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png",
+			"https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png"
 	});
 
 	const [cleanerRegisterDetails, setCleanerRegisterDetails] = useState({
@@ -35,7 +31,7 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 		companyCity: "",
 		cleanerPhotoURL:
 			"http://clipart-library.com/new_gallery/44-448154_cleaning-clipart-worker-window-cleaning-clip-art.png",
-		balance: 0,
+		balance: 0
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -48,7 +44,7 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 			password,
 			weightedHeatMapPoints,
 			photoURL,
-			city,
+			city
 		} = clientRegisterDetails;
 		const {
 			companyName,
@@ -58,7 +54,7 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 			companyCity,
 			companyDescription,
 			cleanerPhotoURL,
-			balance,
+			balance
 		} = cleanerRegisterDetails;
 
 		if (userType === "client") {
@@ -77,8 +73,8 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 							weightedHeatMapPoints: {
 								latitude: lat,
 								longitude: lng,
-								weight: 1,
-							},
+								weight: 1
+							}
 						};
 					});
 					setIsLoading(false);
@@ -96,7 +92,7 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 						email,
 						weightedHeatMapPoints,
 						photoURL,
-						city,
+						city
 					});
 					navigation.navigate("HomeTabs");
 				})
@@ -122,7 +118,7 @@ const Register = ({ userType, navigation, setLoggedUserPostCode }) => {
 						companyDescription,
 						companyCity,
 						cleanerPhotoURL,
-						balance,
+						balance
 					});
 					navigation.navigate("Map");
 				})

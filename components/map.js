@@ -6,7 +6,7 @@ import {
 	Text,
 	View,
 	Dimensions,
-	ActivityIndicator,
+	ActivityIndicator
 } from "react-native";
 import axios from "axios";
 import { googleMapsAPI } from "../googleMapsAPI";
@@ -23,7 +23,7 @@ const Map = ({ loggedUserPostCode, navigation }) => {
 
 	const [coordinates, setCoordinates] = useState({
 		lat: 51.4444784,
-		lng: -0.1599027,
+		lng: -0.1599027
 	});
 
 	useEffect(() => {
@@ -73,12 +73,12 @@ const Map = ({ loggedUserPostCode, navigation }) => {
 						latitude: coordinates.lat,
 						longitude: coordinates.lng,
 						latitudeDelta: 0.07,
-						longitudeDelta: 0.07,
+						longitudeDelta: 0.07
 					}}
 				>
 					<Heatmap
 						points={points}
-						opacity={1}
+						opacity={2}
 						radius={20}
 						maxIntensity={100}
 						gradientSmoothing={10}
@@ -106,11 +106,11 @@ const styles = StyleSheet.create({
 		backgroundColor: "#fff",
 		alignItems: "center",
 		justifyContent: "center",
-		marginTop: 50,
+		marginTop: 50
 	},
 	map: {
 		width: Dimensions.get("window").width,
-		height: Dimensions.get("window").height,
+		height: Dimensions.get("window").height
 	},
 	buttonCallout: {
 		flex: 1,
@@ -121,16 +121,16 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 		backgroundColor: "transparent",
 		borderWidth: 0.5,
-		borderRadius: 20,
+		borderRadius: 20
 	},
 	touchable: {
 		backgroundColor: "lightblue",
 		padding: 10,
-		margin: 10,
+		margin: 10
 	},
 	touchableText: {
-		fontSize: 24,
-	},
+		fontSize: 24
+	}
 });
 
 export default Map;
